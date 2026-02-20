@@ -1,8 +1,11 @@
 type OllamaResponse = {
-  response: string;
+    response: string;
 };
 
-export async function generateCommit(diff: string): Promise<string> {
+export async function generateCommit(
+    diff: string,
+    model: string = 'llama3.1:latest'
+): Promise<string> {
     if (!diff) {
         console.log(`No changes done`)
         process.exit(0);
@@ -52,18 +55,25 @@ Now generate the commit message.
 Diff:
 ${diff}
 `
+    try {
+        const res = await fetch('http://localhost:11434/api/generate', {
+            method: 'POST',
+            body: JSON.stringify({
+                model,
+                prompt,
+                stream: false,
+            })
+        })
+    const data = (await res.json()) as OllamaResponse;
+    return data.response.trim();
+    }catch(err){
+        console.log(`Failed to connect to Ollama`);
+        process.exit(1);
+        
+    }
 
-const res = await fetch('http://localhost:11434/api/generate', {
-    method : 'POST',
-    body : JSON.stringify({
-        model : 'llama3.1:latest',
-        prompt,
-        stream : false,
-    })
-})
 
-const data = await res.json() as OllamaResponse;
-return data.response.trim() ;
+
 }
 
 
