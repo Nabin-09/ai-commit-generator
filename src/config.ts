@@ -18,10 +18,9 @@ export function getConfig() : Config | null{
         return null;
     }
 }
-
-export function saveConfig(config : Config){
-    if(!existsSync(CONFIG_DIR)){
-        mkdirSync(CONFIG_DIR);
-    }
-writeFileSync(CONFIG_FILE , JSON.stringify(config , null , 2));
+export function saveConfig(config: Config) {
+  if (!existsSync(CONFIG_DIR)) {
+    mkdirSync(CONFIG_DIR);
+  }
+  writeFileSync(CONFIG_FILE, JSON.stringify(config, null, 2));
 }
