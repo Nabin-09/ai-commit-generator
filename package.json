@@ -1,9 +1,10 @@
 {
-  "name": "ai-commit-gen",
+  "name": "commitmind",
   "version": "1.0.0",
   "author": "Nabin Sharma",
   "bin": {
-    "aic": "./dist/index.js"
+    "aic": "./dist/index.js",
+    "cm": "./dist/index.js"
   },
   "description": "AI-powered Git commit CLI using Ollama",
   "keywords": ["git", "ai", "commit", "ollama", "cli"],
@@ -15,5 +16,8 @@
   "devDependencies": {
     "@types/node": "^25.3.0",
     "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "commitmind": "^1.0.0"
   }
 }
