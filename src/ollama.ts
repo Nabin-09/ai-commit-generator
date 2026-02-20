@@ -1,3 +1,7 @@
+type OllamaResponse = {
+  response: string;
+};
+
 export async function generateCommit(diff: string): Promise<string> {
     if (!diff) {
         console.log(`No changes done`)
@@ -58,8 +62,8 @@ const res = await fetch('http://localhost:11434/api/generate', {
     })
 })
 
-const data = await res.json();
-return data.response.trim()
+const data = await res.json() as OllamaResponse;
+return data.response.trim() ;
 }
 
 

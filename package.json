@@ -9,6 +9,9 @@
   "scripts": {
     "dev": "bun index.ts"
   },
+   "bin": {
+    "aic": "./src/index.ts"
+  },
   "peerDependencies": {
     "typescript": "^5"
   },

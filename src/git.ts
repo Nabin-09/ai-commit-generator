@@ -1,3 +1,5 @@
+import {$} from 'bun';
+
 export async function stageAll(){
     await $`git add .`;
 }
