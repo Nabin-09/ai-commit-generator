@@ -1,5 +1,5 @@
 
-import { saveConfig } from "./config";
+import { saveConfig } from "./config.js";
 import readline from "readline";
 
 async function getOllamaModels():Promise<string[]> {
