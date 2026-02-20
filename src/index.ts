@@ -1,7 +1,7 @@
-#!/usr/bin/env bun
+#!/usr/bin/env node
 
-import { stageAll, getDiff, commit, push } from "./git";
-import { generateCommit } from "./ollama";
+import { stageAll, getDiff, commit, push } from "./git.js";
+import { generateCommit } from "./ollama.js";
 
 async function main() {
   const command = process.argv[2];
