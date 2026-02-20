@@ -1,18 +1,17 @@
-import {$} from 'bun';
+import { execSync } from "child_process";
 
-export async function stageAll(){
-    await $`git add .`;
+export function stageAll() {
+  execSync("git add .", { stdio: "inherit" });
 }
 
-export async function getDiff() : Promise<string>{
-    const diff = await $`git diff --staged --no-color`.text();
-    return diff;
+export function getDiff(): string {
+  return execSync("git diff --staged --no-color").toString();
 }
 
-export async function commit(msg : string){
-    await $`git commit -m ${msg}`
+export function commit(msg: string) {
+  execSync(`git commit -m "${msg}"`, { stdio: "inherit" });
 }
 
-export async function push(branch : string){
-    await $`git push origin ${branch}`
+export function push(branch: string) {
+  execSync(`git push origin ${branch}`, { stdio: "inherit" });
 }

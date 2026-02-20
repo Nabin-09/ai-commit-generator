@@ -1,23 +1,19 @@
 {
   "name": "ai-commit-gen",
-  "module": "index.ts",
-  "type": "module",
-  "private": true,
-  "devDependencies": {
-    "@types/bun": "latest"
+  "version": "1.0.0",
+  "author": "Nabin Sharma",
+  "bin": {
+    "aic": "./dist/index.js"
   },
+  "description": "AI-powered Git commit CLI using Ollama",
+  "keywords": ["git", "ai", "commit", "ollama", "cli"],
+  "license": "MIT",
   "scripts": {
-    "dev": "bun index.ts"
+    "build": "tsc"
   },
-   "bin": {
-    "aic": "./src/index.ts"
-  },
-  "peerDependencies": {
-    "typescript": "^5"
-  },
-  "dependencies": {
-    "axios": "^1.13.5",
-    "dotenv": "^17.3.1",
-    "express": "^5.2.1"
+  "type": "module",
+  "devDependencies": {
+    "@types/node": "^25.3.0",
+    "typescript": "^5.9.3"
   }
 }
