@@ -1,13 +1,19 @@
 {
   "name": "commitmind",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Nabin Sharma",
   "bin": {
     "aic": "./dist/index.js",
     "cm": "./dist/index.js"
   },
   "description": "AI-powered Git commit CLI using Ollama",
-  "keywords": ["git", "ai", "commit", "ollama", "cli"],
+  "keywords": [
+    "git",
+    "ai",
+    "commit",
+    "ollama",
+    "cli"
+  ],
   "license": "MIT",
   "scripts": {
     "build": "tsc"
