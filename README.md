@@ -10,6 +10,10 @@ Stop wasting time writing commit messages. Let AI handle it — fast, private, a
 
 ---
 
+## Demo 
+
+![Screenshot](https://raw.githubusercontent.com/Nabin-09/ai-commit-generator/main/images/ss1.png)
+
 ##  Features
 
 *  AI-generated semantic commit messages
