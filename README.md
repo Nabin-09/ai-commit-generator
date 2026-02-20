@@ -96,6 +96,23 @@ This will:
 
 ---
 
+
+## Model Configuration
+
+CommitMind allows you to choose and persist your preferred local AI model.
+
+### First-time setup
+
+On the first run, CommitMind will automatically prompt you to select an installed Ollama model.  
+Your choice will be saved and used for future commits.
+
+---
+
+### Change model anytime
+
+```bash
+aic model set
+
 ##  Example Workflow
 
 ```bash
@@ -106,6 +123,18 @@ aic push main
 ```
 
 ---
+### View current model
+```bash
+aic model get
+```
+
+#### Override model (optional)
+
+You can also specify a model directly:
+
+```bash
+aic auto --model mistral
+```
 
 ##  Why CommitMind?
 
