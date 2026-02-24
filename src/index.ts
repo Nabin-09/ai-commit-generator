@@ -56,7 +56,7 @@ aic push main
 
     if (sub === "get") {
       const config = getConfig();
-      console.log("Current model:", config?.model || "Not set");
+      console.log("☠️ Current model:", config?.model || "Not set");
       return;
     }
   }
@@ -75,16 +75,16 @@ aic push main
 
   const diff = await getDiff();
 
-  console.log(`Generating commit using ${model}...`);
+  console.log(` Generating commit using ${model}...`);
   const message = await generateCommit(diff, model);
 
-  console.log("Commit:", message);
+  console.log("✅ Commit:", message);
 
   await commit(message);
 
   if (command === "push") {
     const branch = args[1] || "main";
-    console.log(`Pushing to ${branch}...`);
+    console.log(`🚀 Pushing to ${branch}...`);
     await push(branch);
   }
 }

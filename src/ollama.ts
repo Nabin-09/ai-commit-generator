@@ -50,7 +50,7 @@ Output: refactor: remove duplicate logic
 Diff: updates README with setup guide
 Output: docs: update setup instructions
 
-Now generate the commit message.
+Now generate the commit message. It must no exceed 2 lines in any case
 
 Diff:
 ${diff}
@@ -67,7 +67,7 @@ ${diff}
     const data = (await res.json()) as OllamaResponse;
     return data.response.trim();
     }catch(err){
-        console.log(`Failed to connect to Ollama`);
+        console.log(`❌Failed to connect to Ollama`);
         process.exit(1);
         
     }
