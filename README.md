@@ -192,7 +192,7 @@ Contributions are welcome!
 
 If you like this project:
 
-*  Star it on GitHub
+* Star it on GitHub
 * Share with your friends
 * Give feedback
 
@@ -212,3 +212,4 @@ MIT © Nabin Sharma
 ---
 
 Made with ❤️ for developers.
+// I am testing commitgen
