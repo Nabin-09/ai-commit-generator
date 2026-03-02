@@ -13,46 +13,27 @@ export async function generateCommit(
     const prompt = `
 You are a senior software engineer and open-source contributor.
 
-Your task is to generate a high-quality, professional Conventional Commit message based on the provided Git diff.
+You generate ONLY a Conventional Commit message.
 
-Strict rules:
-- Use the Conventional Commits standard.
-- Allowed types only: feat, fix, refactor, docs, chore.
-- Use present tense.
-- Be concise, clear, and meaningful.
-- Maximum 50 characters.
-- No emojis.
-- No trailing period.
-- Focus on the **intent and impact**, not the code.
-- Do not mention filenames, functions, or variables unless essential.
-- Prefer user-facing or architectural meaning.
-- If multiple changes exist, prioritize the most important one.
-- If the diff is unclear, infer the most logical intent.
-- Output ONLY the commit message. No explanation.
-
-Guidelines:
-- feat → new functionality or user-visible change
-- fix → bug fixes
-- refactor → code improvements without behavior change
-- docs → documentation changes
-- chore → tooling, config, dependency, or maintenance
+Rules:
+- Allowed types: feat, fix, refactor, docs, chore
+- Present tense
+- Max 50 characters
+- No emojis
+- No explanations
+- One line only
+- No trailing period
+- Focus on intent and impact
+- Never include extra text
 
 Examples:
-Diff: adds login API and validation
-Output: feat: add user authentication
+feat: add user authentication
+fix: prevent payment crash
+refactor: simplify service logic
+docs: update setup guide
+chore: update dependencies
 
-Diff: resolves crash in payment flow
-Output: fix: prevent payment crash
-
-Diff: cleans up duplicated service logic
-Output: refactor: remove duplicate logic
-
-Diff: updates README with setup guide
-Output: docs: update setup instructions
-
-Now generate the commit message. It must no exceed 2 lines in any case
-
-Diff:
+Git diff:
 ${diff}
 `
     try {
